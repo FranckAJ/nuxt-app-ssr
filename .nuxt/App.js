@@ -5,8 +5,9 @@ import '..\\assets\\style\\app.styl'
 
 
 import _6f6c098b from '..\\layouts\\default.vue'
+import _f7662442 from '..\\layouts\\public.vue'
 
-const layouts = { "_default": _6f6c098b }
+const layouts = { "_default": _6f6c098b,"_public": _f7662442 }
 
 
 

@@ -1,38 +1,36 @@
 <template>
   <v-layout
-    column
     justify-center
     align-center>
     <v-flex
-      xs12
-      sm8
-      md6>
-      <div class="text-xs-center">
-      </div>
-      <v-card>
-        <v-card-title class="headline">SSR Test</v-card-title>
-        <v-card-text>
-          <p>Lorem Ipson</p>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer/>
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
+      xs12>
+      <div
+        v-for="(cert, index) in certifications"
+        :key="index">
+        <v-flex xs12 mb-2>
+          <priority
+            :title="cert.title"
+            :categories="cert.categories"
+            :state="cert.state"
+            :description="cert.description"/>
+        </v-flex>
+        </div>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
+import { mapGetters } from 'vuex'
 export default {
   components: {
-    VuetifyLogo
+    VuetifyLogo,
+    Priority: () => import('~/components/Priority.vue')
+  },
+  computed:  {
+    ...mapGetters({
+      certifications: 'certifications'
+    })
   }
 }
 </script>

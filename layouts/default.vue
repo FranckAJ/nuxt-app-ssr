@@ -32,12 +32,6 @@
       app
     >
       <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
       <v-toolbar-title v-text="title"/>
     </v-toolbar>
     <v-content>
@@ -53,16 +47,16 @@
     data() {
       return {
         clipped: false,
-        drawer: true,
+        drawer: false,
         fixed: false,
         items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
+          { icon: 'apps', title: 'Priorities', to: '/' },
+          { icon: 'bubble_chart', title: 'Jobs', to: '/new' }
         ],
         miniVariant: false,
         right: true,
         rightDrawer: false,
-        title: 'My Priorities'
+        title: 'Open Certification'
       }
     }
   }
